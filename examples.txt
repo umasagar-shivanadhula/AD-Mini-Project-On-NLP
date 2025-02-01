@@ -1,0 +1,89 @@
+# Test examples for each feature of the NextGen NLP Hub
+
+# 1. Text Analysis Dashboard Example
+sample_text_analysis = """
+The artificial intelligence revolution is transforming industries worldwide. Companies are 
+leveraging machine learning and deep learning technologies to automate processes, gain insights, 
+and create innovative solutions. In recent years, natural language processing has made significant 
+strides, enabling computers to better understand and generate human language. This technological 
+advancement has led to improved customer service, more efficient data analysis, and enhanced 
+decision-making capabilities. As AI continues to evolve, its impact on society and business 
+operations grows exponentially.
+"""
+
+# 2. Summarizer Example
+sample_text_summarizer = """
+Climate change is one of the most pressing challenges facing our planet today. Rising global 
+temperatures have led to melting ice caps, rising sea levels, and more frequent extreme weather 
+events. Scientists worldwide agree that human activities, particularly the burning of fossil fuels 
+and deforestation, are major contributors to this crisis. Governments and organizations are 
+implementing various measures to reduce greenhouse gas emissions and promote sustainable practices. 
+These efforts include investing in renewable energy sources, improving energy efficiency, and 
+protecting natural ecosystems. However, addressing climate change requires global cooperation and 
+immediate action to prevent irreversible damage to our environment. Many experts believe that the 
+next decade will be crucial in determining the long-term impact of climate change on future 
+generations.
+"""
+# Parameters for summarizer:
+# min_length = 50
+# max_length = 100
+
+# 3. Named Entity Recognition Example
+sample_text_ner = """
+Apple CEO Tim Cook announced new products at their headquarters in Cupertino, California. 
+The event, which took place last Thursday, showcased the latest iPhone and MacBook models. 
+Microsoft and Google are also planning major product launches in New York City next month. 
+The tech industry's competition continues to drive innovation in Silicon Valley.
+"""
+
+# 4. Sentiment Analysis Examples
+sample_texts_sentiment = [
+    # Positive example
+    """
+    We had an absolutely amazing experience at the new restaurant! The food was delicious, 
+    the service was outstanding, and the atmosphere was perfect. We'll definitely be coming 
+    back soon!
+    """,
+    
+    # Negative example
+    """
+    The customer service was terrible. I waited for hours on the phone, and when I finally 
+    got through, they couldn't help me with my issue. Very frustrating experience.
+    """,
+    
+    # Neutral example
+    """
+    The weather today is partly cloudy with temperatures around 70 degrees. Light winds 
+    are expected in the afternoon.
+    """
+]
+
+# 5. Question Answering Example
+sample_context = """
+The Great Wall of China is one of the most impressive architectural feats in human history. 
+Construction began more than 2,000 years ago during the Warring States period. While its 
+total length has been estimated at about 13,171 miles (21,196 kilometers), the main Great 
+Wall line stretches for 5,500 miles (8,850 kilometers). Built primarily of stone, brick, 
+and rammed earth, the wall was designed to protect Chinese states from nomadic invasions. 
+However, it also served as a border control, regulating trade and immigration along the 
+Silk Road.
+"""
+
+sample_questions = [
+    "How long is the main Great Wall line?",
+    "When did the construction begin?",
+    "What was the main purpose of the Great Wall?",
+    "What materials was the wall built with?"
+]
+
+# 6. Text Completion Example
+sample_text_completion = [
+    "The future of renewable energy depends on",
+    "Once upon a time in a distant galaxy",
+    "The key to successful machine learning is"
+]
+
+
+installation:
+pip install streamlit transformers spacy spacy-streamlit plotly
+python -m spacy download en_core_web_sm
