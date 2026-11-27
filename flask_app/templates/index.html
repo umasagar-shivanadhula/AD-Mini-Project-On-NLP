@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Next-Gen NLP Hub</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Next-Gen NLP Hub</h1>
+      <p>Paste text or load a .txt file, then pick an analysis.</p>
+    </header>
+
+    <nav id="tabs" aria-label="Features">
+      {% for m in modules %}
+      <button type="button" class="tab" data-name="{{ m.name }}"
+              data-description="{{ m.description }}">{{ m.title }}</button>
+      {% endfor %}
+    </nav>
+
+    <form id="form">
+      <p id="description"></p>
+      <label for="text">Your text</label>
+      <textarea id="text" rows="10" maxlength="20000" placeholder="Type or paste text here"></textarea>
+      <div class="actions">
+        <input type="file" id="file" accept=".txt,text/plain" aria-label="Load a text file">
+        <span id="count">0 / 20,000</span>
+        <button type="submit" id="run">Analyse</button>
+      </div>
+    </form>
+
+    <section id="result" aria-live="polite" hidden></section>
+  </main>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
